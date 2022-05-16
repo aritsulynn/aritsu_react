@@ -1,38 +1,58 @@
-.App {
+*{
+  /* font-family: 'Comic Neue', cursive; */
+  font-family: 'Comic Neue';
+  margin: 0;
+}
+
+html, body{
+  height: 100%;
+  /* background-color: #222222; */
+}
+
+nav{
+  background-color: #222222;
+  text-align: end;
+  padding: 10px;
+}
+
+li{
+  display: inline-block;
+  list-style-type: none;
+  padding-right: 16px;
+}
+
+a{
+  color: #fff;
+  text-decoration: none;
+  font-size: 20px;
+} 
+
+.Home{
+  text-align: center;
+  margin-top: 20px;
+}
+
+img{
+  height: 510px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+@media screen and (max-width: 600px){
+  img{
+    height: 300px;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.icons a{
+  margin-left: 10px;
+  font-size: 30px;
+}
+
+.img-cover img, .text-cover{
+  margin-top: 10px;
+}
+
+.footer{
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }
