@@ -1,14 +1,9 @@
 import React, {useState}  from "react";
-import Helmet from 'react-helmet';
-
 
 
 export default function Home() {
     return(
         <div className="Home">
-            <Helmet>
-                <meta property='og:title' content='Aritsu | Home'></meta>
-            </Helmet>
             <div className="img-cover">
                 <img src="https://i.imgur.com/iafleFP.png"/>
             </div>

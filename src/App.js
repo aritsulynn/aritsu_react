@@ -19,7 +19,6 @@ import React, {Component, useState}  from "react";
 // import components
 import Footer from './components/Footer';
 
-
 // import theme
 import {lightTheme, darkTheme} from './themes/themes';
 function App() {
