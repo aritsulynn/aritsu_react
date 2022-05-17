@@ -1,10 +1,26 @@
+import { Grid, Typography, Link, Button, Container } from "@material-ui/core";
+
+
+import { makeStyles } from "@material-ui/core/styles";
 
 
 export default function Notfound(){
+
+
     return(
-        <div style={{width: "100%", textAlign:"center", padding: "200px 200px"}}>
-            <h1>Sorry, that page was not found!</h1>
-            <button><a href="/" style={{color: "black" , margin: "20px 20px"}}>HOME</a></button>
-        </div>        
+        <Container style={{paddingTop: "100px", paddingBottom:"100px"}}>
+            <Grid container direction="column" alignItems="center">
+                <Grid item>
+                    <Typography>
+                        Sorry, that pages doesn't exist.
+                    </Typography>
+                </Grid>
+                <Grid item>
+                    <Button variant="contained" style={{backgroundColor:"#222222"}}>
+                        <a href="/"><Typography style={{color:"white"}}>GO HOME</Typography></a>
+                    </Button>
+                </Grid>
+            </Grid>
+        </Container>
     );
 }

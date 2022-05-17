@@ -1,58 +1,18 @@
 *{
   /* font-family: 'Comic Neue', cursive; */
-  font-family: 'Comic Neue';
+  /* font-family: 'Comic Neue'; */
   margin: 0;
 }
 
 html, body{
   height: 100%;
-  /* background-color: #222222; */
 }
 
-nav{
-  background-color: #222222;
-  text-align: end;
-  padding: 10px;
-}
+a{
+  text-decoration: none;
+} 
 
 li{
   display: inline-block;
   list-style-type: none;
-  padding-right: 16px;
-}
-
-a{
-  color: #fff;
-  text-decoration: none;
-  font-size: 20px;
 } 
-
-.Home{
-  text-align: center;
-  margin-top: 20px;
-}
-
-img{
-  height: 510px;
-  text-align: center;
-}
-
-@media screen and (max-width: 600px){
-  img{
-    height: 300px;
-  }
-}
-
-.icons a{
-  margin-left: 10px;
-  font-size: 30px;
-}
-
-.img-cover img, .text-cover{
-  margin-top: 10px;
-}
-
-.footer{
-  display: flex;
-  justify-content: center;
-}

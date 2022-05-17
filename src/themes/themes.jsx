@@ -1,4 +1,4 @@
-import { createTheme } from "@material-ui/core";
+import { createTheme, Typography } from "@material-ui/core";
 import { red, blue } from "@mui/material/colors";
 
 
@@ -10,7 +10,11 @@ export const lightTheme = createTheme({
       text: {
         primary: "#222222"
       },
-    }
+    },
+  typography: {
+    fontFamily: "Comic Neue",
+    fontSize: 14,
+  },
 });
 
 export const darkTheme = createTheme({
@@ -22,6 +26,10 @@ export const darkTheme = createTheme({
           primary: "#ffffff"
         },
       },
+    typography: {
+      fontFamily: "Comic Neue",
+      fontSize: 14,
+    },
   
 });
 
