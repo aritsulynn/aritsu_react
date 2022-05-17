@@ -1,3 +1,4 @@
+import React from "react";
 import "./App.css";
 
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
@@ -18,8 +19,6 @@ import Notfound from "./pages/Notfound";
 import Home from "./pages/Home";
 import About from "./pages/About";
 
-import React, { Component, useState } from "react";
-
 // import components
 import Footer from "./components/Footer";
 
@@ -27,17 +26,18 @@ import { FaSun, FaRegMoon } from "react-icons/fa";
 
 // import theme
 import { lightTheme, darkTheme } from "./themes/themes";
-
+import useLocalStorage from 'use-local-storage';
 const useStyles = makeStyles(({
   disable: {
     color: "darkgray",
   },
 }));
 function App() {
-  const [isDarkTheme, setIsDarkTheme] = useState(true);
+  const [isDarkTheme, setIsDarkTheme] = useLocalStorage("theme", true);
 
   const changeTheme = () => {
-    setIsDarkTheme(!isDarkTheme);
+    setIsDarkTheme(isDarkTheme === true ? false : true);
+    // setIsDarkTheme(!isDarkTheme);
   };
 
   const classes = useStyles();

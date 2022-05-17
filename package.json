@@ -19,6 +19,7 @@
     "react-scripts": "5.0.1",
     "styled-components": "^5.3.5",
     "theme-ui": "^0.14.5",
+    "use-local-storage": "^2.3.6",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
