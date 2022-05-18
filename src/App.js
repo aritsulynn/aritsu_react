@@ -18,6 +18,9 @@ import { ThemeProvider, createTheme, makeStyles } from "@material-ui/core/styles
 import Notfound from "./pages/Notfound";
 import Home from "./pages/Home";
 import About from "./pages/About";
+import Anime from "./pages/Anime";
+import Anilist from "./pages/Anilist";
+import UserAnime from "./pages/UserAnime";
 
 // import components
 import Footer from "./components/Footer";
@@ -65,11 +68,17 @@ function App() {
                     </Typography>
                   </Link>
                 </Grid>
-                <Grid item>
-                  {/* <Link to="/About"> */}
-                  <Link to="#disable" className={classes.disable}>
+                {/* <Grid item>
+                  <Link to="/About">
                     <Typography>
                       About
+                    </Typography>
+                  </Link>
+                </Grid> */}
+                <Grid item>
+                  <Link to="/UserAnime" style={{ color: "white" }}>
+                    <Typography>
+                      AniSearch
                     </Typography>
                   </Link>
                 </Grid>
@@ -92,6 +101,9 @@ function App() {
               <Route path="*" element={<Notfound />} />
               <Route path="/" element={<Home />} />
               <Route path="/About" element={<About />} />
+              <Route path="/Anime" element={<Anime themes={isDarkTheme ? "darkTheme" : "lightTheme"}/>} />
+              <Route path="/Anilist" element={<Anilist />} />
+              <Route path="/UserAnime" element={<UserAnime themes={isDarkTheme ? "darkTheme" : "lightTheme"}/>} />
             </Routes>
           </Box>
         </main>
