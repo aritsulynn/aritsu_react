@@ -1,6 +1,6 @@
 import React from "react";
 import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
-import GetAnime from '../components/GetAnime';
+import GetUserAnime from '../components/GetUserAnime';
 
 export default function Anime(props){
     const client = new ApolloClient({
@@ -9,7 +9,7 @@ export default function Anime(props){
     });
     return(
         <ApolloProvider client={client}>
-            <GetAnime getthemes={props.themes === "darkTheme" ? "darkTheme" : "lightTheme"}/>
+            <GetUserAnime themes={props.themes === "darkTheme" ? "darkTheme" : "lightTheme"}/>
         </ApolloProvider>
     )
 }

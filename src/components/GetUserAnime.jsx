@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { GET_USER_ANIME_QUERY } from "../graphQL/Query";
 import { useLazyQuery } from "@apollo/client";
 
+import { orange } from '@mui/material/colors';
+
 import {
   Typography,
   Box,
@@ -15,9 +17,11 @@ import {
   InputLabel,
   NativeSelect,
   FormHelperText,
-  Paper
+  Paper,
+  Link,
 } from "@material-ui/core";
 
+import Stack from '@mui/material/Stack';
 const useStyles = makeStyles((theme) => ({
   darkTheme: {
     borderRadius: "10px",
@@ -46,22 +50,8 @@ export default function GetUserAnime(props) {
     variables: { name: username },
   });
 
-  // if(data){
-  //   let text = data.MediaListCollection.lists[0].entries.map((entry) => {
-  //     return entry.media.title.english;
-  //   });
-  //   console.log(text);
-  // }
-  // if(data && data.MediaListCollection.lists.length > 0){
-  //   let text = data.MediaListCollection.lists[0].entries.map((entry) => {
-  //     return entry.media.title.english;
-  //   });
-  //   console.log(text);
-  // }
   const classes = useStyles();
-
-
-  console.log(data);
+  // console.log(data);
 
   useEffect(() => {
     setUsername("Aritsulynn");
@@ -73,25 +63,31 @@ export default function GetUserAnime(props) {
       <Grid
         container
         direction="column"
-        justifyContent="center"
-        alignItems="center"
         spacing={2}
       > 
         <Grid item style={{backgroundColor:"white" , borderRadius:"15px"}}>
-            <FormControl>
+            <FormControl fullWidth>
               <TextField
                 label="Username"
                 defaultValue="Aritsulynn"
                 onKeyPress={() => getAnime()}
                 onChange={(e) => setUsername(e.target.value)}
                 inputProps={{ className: classes.input }}
-                className={ props.getthemes === "darkTheme" ? classes.darkTheme : classes.lightTheme }
+                className={ props.themes === "darkTheme" ? classes.darkTheme : classes.lightTheme }
                 variant="outlined"
               />
               {/* <Button onClick={() => getAnime()} style={{backgroundColor:"black", color: "white", borderRadius: "15px"}}>Butoon</Button> */}
             </FormControl>
         </Grid>
-        <Grid item><Typography>Searching by Username. *Working with anime only</Typography></Grid>
+        <Grid item><Typography>*Working for anime only</Typography></Grid>
+      </Grid>
+      <Grid container justifyContent="center" spacing={1}>
+          {data && data.MediaListCollection.lists.map((list) => {
+            return (
+              <Grid item >
+                <Button variant="outlined" style={{backgroundColor: props.themes === 'darkTheme' ? 'white' : 'black'}}><Link href={"#"+list.name} underline="none" style={{color : props.themes === 'darkTheme' ? 'black' : 'white'}}>{list.name}</Link></Button>
+              </Grid >)
+          })}
       </Grid>
       <Grid
         container
@@ -100,19 +96,19 @@ export default function GetUserAnime(props) {
       >
         {/* Completed */}
         <Grid item>
-          {loading && <Typography>Loading...</Typography>}
-          {error && <Typography>error</Typography>}
+          {/* {loading && <Typography>Loading...</Typography>}
+          {error && <Typography>error</Typography>} */}
           {data && data.MediaListCollection.lists.map((list) => {
             return (
               <Grid container>
-                <Typography variant="h4">{list.name}</Typography>
+                <Typography variant="h4" id={list.name}>{list.name}</Typography>
                 {(typeof(list.entries)=='object') ?
                 <Grid container justifyContent='center'>
                   {list.entries.map((entry) =>{
                     return(
                           <Grid item style={{width:"150px", margin:"5px"}}>
                             <img src={entry.media.coverImage.large} alt={entry.media.title.english} width="150px" height="200px"/>
-                            <Typography variant="subtitle1">{entry.media.title.romaji}</Typography>
+                            <Link href={entry.media.siteUrl} target="_blank" rel="noopener noreferrer"><Typography variant="subtitle1" style={{color: props.themes === 'darkTheme' ? 'white' : 'black'}}>{entry.media.title.romaji}</Typography></Link>
                           </Grid>
                     )})
                   }

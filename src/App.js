@@ -18,10 +18,12 @@ import { ThemeProvider, createTheme, makeStyles } from "@material-ui/core/styles
 import Notfound from "./pages/Notfound";
 import Home from "./pages/Home";
 import About from "./pages/About";
-import Anime from "./pages/Anime";
+import AnimeSearch from "./pages/AnimeSearch";
 import Anilist from "./pages/Anilist";
-import UserAnime from "./pages/UserAnime";
+import UserAnime from "./pages/AniSearch";
 
+
+import ScrollButton from "./components/ScrollButton";
 // import components
 import Footer from "./components/Footer";
 
@@ -55,9 +57,9 @@ function App() {
           <Toolbar>
             {/* whatever is on the right side */}
             <Box>
-              <Typography variant="h6" style={{ color: "white" }}>
+              <Link to='/'><Typography variant="h6" style={{ color: "white" }}>
                 Aritsu
-              </Typography>
+              </Typography></Link>
             </Box>
             <Box style={{ marginLeft: "auto" }}>
               <Grid container spacing={2}>
@@ -76,7 +78,7 @@ function App() {
                   </Link>
                 </Grid> */}
                 <Grid item>
-                  <Link to="/UserAnime" style={{ color: "white" }}>
+                  <Link to="/AniSearch" style={{ color: "white" }}>
                     <Typography>
                       AniSearch
                     </Typography>
@@ -100,15 +102,18 @@ function App() {
             <Routes>
               <Route path="*" element={<Notfound />} />
               <Route path="/" element={<Home />} />
+              <Route path="/Linktree" element={<Home />} />
               <Route path="/About" element={<About />} />
-              <Route path="/Anime" element={<Anime themes={isDarkTheme ? "darkTheme" : "lightTheme"}/>} />
-              <Route path="/Anilist" element={<Anilist />} />
-              <Route path="/UserAnime" element={<UserAnime themes={isDarkTheme ? "darkTheme" : "lightTheme"}/>} />
+              {/* <Route path="/Anime" element={<Anime themes={isDarkTheme ? "darkTheme" : "lightTheme"}/>} /> */}
+              <Route path="/Anilist" element={<Anilist />} /> {/* work in progress login*/}
+              <Route path="/Anime" element={<AnimeSearch />} />
+              <Route path="/AniSearch" element={<UserAnime themes={isDarkTheme ? "darkTheme" : "lightTheme"}/>} />
             </Routes>
           </Box>
         </main>
       </Router>
       <Box>
+        <ScrollButton themes={isDarkTheme ? "darkTheme" : "lightTheme"}/>
         <Footer themes={isDarkTheme ? "darkTheme" : "lightTheme"} />
       </Box>
     </ThemeProvider>

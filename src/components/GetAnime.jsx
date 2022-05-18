@@ -11,25 +11,24 @@ import {
   TextField,
   makeStyles,
   Input,
+  FormControl,
 } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
   darkTheme: {
-    backgroundColor: "gray",
     borderRadius: "10px",
     text: {
       color: "#222222",
     },
   },
   lightTheme: {
-    backgroundColor: "gray",
     borderRadius: "10px",
     text: {
       color: "#fff",
     },
   },
   input: {
-    color: "white",
+    color: "black",
     textAlign: "center",
     fontSize: "20px",
   },
@@ -56,20 +55,20 @@ export default function GetAnime(props) {
       <Grid
         container
         direction="column"
-        justifyContent="center"
-        alignItems="center"
         spacing={2}
       >
-        <Grid item>
-          <TextField
-            disableUnderline
-            label="Anime name"
-            onKeyPress={() => getAnime()}
-            onChange={(e) => setSearch(e.target.value)}
-            inputProps={{ className: classes.input }}
-            className={ props.getthemes === "darkTheme" ? classes.darkTheme : classes.lightTheme }
-            variant="outlined"
-          />
+        <Grid item style={{backgroundColor:"white" , borderRadius:"15px"}}>
+            <FormControl fullWidth>
+              <TextField
+                label="Anime name"
+                onKeyPress={() => getAnime()}
+                onChange={(e) => setSearch(e.target.value)}
+                inputProps={{ className: classes.input }}
+                className={ props.themes === "darkTheme" ? classes.darkTheme : classes.lightTheme }
+                variant="outlined"
+              />
+              {/* <Button onClick={() => getAnime()} style={{backgroundColor:"black", color: "white", borderRadius: "15px"}}>Butoon</Button> */}
+            </FormControl>
         </Grid>
         <Grid item>
           {data && (
