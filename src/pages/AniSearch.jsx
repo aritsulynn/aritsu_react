@@ -9,7 +9,7 @@ export default function Anime(props){
     });
     return(
         <ApolloProvider client={client}>
-            <GetUserAnime themes={props.themes === "darkTheme" ? "darkTheme" : "lightTheme"}/>
+            <GetUserAnime themes={props.themes}/>
         </ApolloProvider>
     )
 }

@@ -43,19 +43,19 @@ function Footer(props) {
         <Container style={{paddingTop: "10px", paddingBottom:"10px"}}>
             <Grid container justifyContent="center">
                 <Grid item>
-                    <a href="https://www.facebook.com/aritsulynn" className={props.themes === "darkTheme" ? classes.lightTheme : classes.darkTheme}><BsFacebook /></a>
+                    <a href="https://www.facebook.com/aritsulynn" className={props.themes ? classes.lightTheme : classes.darkTheme}><BsFacebook /></a>
                 </Grid>
                 <Grid item>
-                    <a href="https://www.instagram.com/aritsulynn/" className={props.themes === "darkTheme" ? classes.lightTheme : classes.darkTheme}><BsInstagram /></a>
+                    <a href="https://www.instagram.com/aritsulynn/" className={props.themes ? classes.lightTheme : classes.darkTheme}><BsInstagram /></a>
                 </Grid>
                 <Grid item>
-                    <a href="https://twitter.com/aritsulynnjp" className={props.themes === "darkTheme" ? classes.lightTheme : classes.darkTheme}><BsTwitter /></a>    
+                    <a href="https://twitter.com/aritsulynnjp" className={props.themes ? classes.lightTheme : classes.darkTheme}><BsTwitter /></a>    
                 </Grid>
                 <Grid item>
-                    <a href="https://github.com/Aritsulynn" className={props.themes === "darkTheme" ? classes.lightTheme : classes.darkTheme}><BsGithub /></a>  
+                    <a href="https://github.com/Aritsulynn" className={props.themes ? classes.lightTheme : classes.darkTheme}><BsGithub /></a>  
                 </Grid>
                 <Grid item>
-                    <a href="https://discordapp.com/users/291900215785685014" className={props.themes === "darkTheme" ? classes.lightTheme : classes.darkTheme}><BsDiscord /></a>
+                    <a href="https://discordapp.com/users/291900215785685014" className={props.themes ? classes.lightTheme : classes.darkTheme}><BsDiscord /></a>
                 </Grid>
             </Grid>
         </Container>

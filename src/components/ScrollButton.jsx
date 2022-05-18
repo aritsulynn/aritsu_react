@@ -30,7 +30,7 @@ const ScrollButton = (props) => {
         onClick={scrollToTop}
         style={{
           display: visible ? "inline" : "none",
-          color: props.themes === "darkTheme" ? "white" : "black",
+          color: props.themes? "white" : "black",
         }}
       />
     </Button>

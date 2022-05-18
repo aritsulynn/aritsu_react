@@ -21,26 +21,20 @@ import {
   Link,
 } from "@material-ui/core";
 
-import Stack from '@mui/material/Stack';
 const useStyles = makeStyles((theme) => ({
   darkTheme: {
     borderRadius: "10px",
-    text: {
-      color: "#222222",
-    },
+    color: "#222222",
   },
   lightTheme: {
     borderRadius: "10px",
-    text: {
-      color: "#fff",
-    },
+    color: "white",
   },
   input: {
     color: "black",
     textAlign: "center",
     fontSize: "20px",
   },
-
 }));
 
 export default function GetUserAnime(props) {
@@ -73,7 +67,7 @@ export default function GetUserAnime(props) {
                 onKeyPress={() => getAnime()}
                 onChange={(e) => setUsername(e.target.value)}
                 inputProps={{ className: classes.input }}
-                className={ props.themes === "darkTheme" ? classes.darkTheme : classes.lightTheme }
+                className={ props.themes ? classes.darkTheme : classes.lightTheme }
                 variant="outlined"
               />
               {/* <Button onClick={() => getAnime()} style={{backgroundColor:"black", color: "white", borderRadius: "15px"}}>Butoon</Button> */}
@@ -85,7 +79,7 @@ export default function GetUserAnime(props) {
           {data && data.MediaListCollection.lists.map((list) => {
             return (
               <Grid item >
-                <Button variant="outlined" style={{backgroundColor: props.themes === 'darkTheme' ? 'white' : 'black'}}><Link href={"#"+list.name} underline="none" style={{color : props.themes === 'darkTheme' ? 'black' : 'white'}}>{list.name}</Link></Button>
+                <Button variant="outlined" style={{backgroundColor: props.themes ? 'white' : 'black'}}><Link href={"#"+list.name} underline="none" style={{color : props.themes ? 'black' : 'white'}}>{list.name}</Link></Button>
               </Grid >)
           })}
       </Grid>
@@ -108,7 +102,7 @@ export default function GetUserAnime(props) {
                     return(
                           <Grid item style={{width:"150px", margin:"5px"}}>
                             <img src={entry.media.coverImage.large} alt={entry.media.title.english} width="150px" height="200px"/>
-                            <Link href={entry.media.siteUrl} target="_blank" rel="noopener noreferrer"><Typography variant="subtitle1" style={{color: props.themes === 'darkTheme' ? 'white' : 'black'}}>{entry.media.title.romaji}</Typography></Link>
+                            <Link href={entry.media.siteUrl} target="_blank" rel="noopener noreferrer" className={ props.themes ? classes.lightTheme : classes.darkTheme}><Typography variant="subtitle1" >{entry.media.title.romaji}</Typography></Link>
                           </Grid>
                     )})
                   }

@@ -64,7 +64,7 @@ export default function GetAnime(props) {
                 onKeyPress={() => getAnime()}
                 onChange={(e) => setSearch(e.target.value)}
                 inputProps={{ className: classes.input }}
-                className={ props.themes === "darkTheme" ? classes.darkTheme : classes.lightTheme }
+                className={ props.themes ? classes.darkTheme : classes.lightTheme }
                 variant="outlined"
               />
               {/* <Button onClick={() => getAnime()} style={{backgroundColor:"black", color: "white", borderRadius: "15px"}}>Butoon</Button> */}
