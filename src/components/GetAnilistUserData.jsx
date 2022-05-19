@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { GET_USER_ANIME_QUERY } from "../graphQL/Query";
+import { GET_ANILIST_USER_QUERY } from "../graphQL/Query";
 import { useLazyQuery } from "@apollo/client";
 
 import { orange } from '@mui/material/colors';
@@ -41,18 +41,19 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function GetUserAnime(props) {
+export default function GetAnilistUserData(props) {
   const [username, setUsername] = useState("");
+  const [type, setType] = useState("ANIME");
 
-  const [getAnime, { loading, data, error }] = useLazyQuery(GET_USER_ANIME_QUERY, {
-    variables: { name: username },
+  const [getAnime, { loading, data, error }] = useLazyQuery(GET_ANILIST_USER_QUERY, {
+    variables: { name: username, type: type },
   });
 
   const [category, setCategory] = useState("All");
-
+  
   const classes = useStyles();
   // console.log(data);
-
+  // console.log(type);
   useEffect(() => {
     setUsername("Aritsulynn");
     getAnime();
@@ -71,7 +72,7 @@ export default function GetUserAnime(props) {
               <Grid container direction="column" spacing={2}>
                 <Grid item style={{width: "100%"}}>
                   <TextField
-                        label="Username"
+                        label="Name"
                         defaultValue="Aritsulynn"
                         onKeyPress={() => getAnime()}
                         onChange={(e) => setUsername(e.target.value)}
@@ -80,6 +81,21 @@ export default function GetUserAnime(props) {
                         style={{color: props.themes ? "white" : "black"}}
                         fullWidth
                       />
+                </Grid>
+                <Grid item style={{width: "100%"}}>
+                  <FormControl fullWidth>
+                    <InputLabel id="type-selector" style={{color: props.themes ? "white" : "black"}}>Type</InputLabel>
+                    <Select
+                      labelId="type-selector"
+                      id="type-selector"
+                      label="type"
+                      value={type}
+                      onChange={(e) => setType(e.target.value)}
+                    >
+                    <MenuItem value="ANIME" style={{color: "black"}}>Anime</MenuItem>
+                    <MenuItem value="MANGA" style={{color: "black"}}>Manga</MenuItem>
+                    </Select>
+                  </FormControl>
                 </Grid>
                 <Grid item style={{width: "100%"}}>
                   <FormControl fullWidth>
@@ -102,7 +118,6 @@ export default function GetUserAnime(props) {
               </Grid>
             </Box>
         </Grid>
-        <Grid item><Typography>*Working for anime only</Typography></Grid>
       </Grid>
       <Grid
         container

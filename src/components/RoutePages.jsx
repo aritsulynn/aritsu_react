@@ -7,7 +7,7 @@ import Home from "../pages/Home";
 import About from "../pages/About";
 import AnimeSearch from "../pages/AnimeSearch";
 import Anilist from "../pages/Anilist";
-import UserAnime from "../pages/AniSearch";
+import AnilistUserSearch from "../pages/AnilistUserSearch";
 
 import {
     Box
@@ -23,7 +23,7 @@ export default function RoutePages(props) {
               <Route path="/About" element={<About />} />
               {/* <Route path="/Anilist" element={<Anilist />} /> work in progress login */}
               <Route path="/Anime" element={<AnimeSearch themes={props.themes} />} />
-              <Route path="/AniSearch" element={<UserAnime themes={props.themes}/>} />
+              <Route path="/AniSearch" element={<AnilistUserSearch themes={props.themes}/>} />
             </Routes>
         </Box>
     )

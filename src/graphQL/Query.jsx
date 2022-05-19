@@ -34,9 +34,9 @@ export const GET_ANIME_QUERY = gql`
     }
 `
 
-export const GET_USER_ANIME_QUERY = gql`
-    query ($name: String) {
-        MediaListCollection(userName: $name, type: ANIME) {
+export const GET_ANILIST_USER_QUERY = gql`
+    query ($name: String $type: MediaType) {
+        MediaListCollection(userName: $name, type: $type) {
             lists {
                 name
                 entries {

@@ -22,7 +22,7 @@ export default function Home() {
             <Grid container direction="column" alignContent="center" alignItems='center'>
                 <Grid container justifyContent="center" alignContent="center">
                     <Grid item>
-                        <img src="https://i.imgur.com/iafleFP.png" className={classes.custom}/>
+                        <img src="https://i.imgur.com/iafleFP.png" className={classes.custom} alt="Aritsu Cover"/>
                     </Grid>
                 </Grid>
                 <Grid item>
