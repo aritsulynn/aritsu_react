@@ -22,7 +22,7 @@ export default function RoutePages(props) {
               <Route path="/Linktree" element={<Home />} />
               <Route path="/About" element={<About />} />
               {/* <Route path="/Anilist" element={<Anilist />} /> work in progress login */}
-              <Route path="/Anime" element={<AnimeSearch />} />
+              <Route path="/Anime" element={<AnimeSearch themes={props.themes} />} />
               <Route path="/AniSearch" element={<UserAnime themes={props.themes}/>} />
             </Routes>
         </Box>

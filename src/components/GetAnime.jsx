@@ -11,6 +11,7 @@ import {
   TextField,
   makeStyles,
   Input,
+  Link,
   FormControl,
 } from "@material-ui/core";
 
@@ -67,31 +68,37 @@ export default function GetAnime(props) {
                 className={ props.themes ? classes.darkTheme : classes.lightTheme }
                 variant="outlined"
               />
-              {/* <Button onClick={() => getAnime()} style={{backgroundColor:"black", color: "white", borderRadius: "15px"}}>Butoon</Button> */}
             </FormControl>
         </Grid>
         <Grid item>
-          {data && (
-            <Grid
-              container
-              direction="column"
-              justifyContent="center"
-              alignItems="center"
-            >
-              <Grid item>
-                <img src={data.Media.coverImage.large} />
+          <Box>
+            {data && (
+              <Grid
+                container
+                direction="column"
+                justifyContent="center"
+                alignItems="center"
+              >
+                <Grid item>
+                  <img src={data.Media.coverImage.large} alt={data.Media.title.romaji}/>
+                </Grid>
+                <Grid item>
+                  <Link href={data.Media.siteUrl} color="secondary" target="_blank" rel="noopener noreferrer"><Typography variant="h3" style={{color: props.themes ? "white" : "black"}}>{data.Media.title.romaji}</Typography></Link>
+                </Grid>
+                <Grid item>
+                  <Typography variant="subtitle1" style={{textAlign: "center"}}>Genres</Typography>
+                  {data.Media.genres.map((genre) => {
+                    return (
+                      <Button>{genre}</Button>
+                    )
+                  })}
+                </Grid>
+                <Grid item>
+                  <Typography variant="subtitle">{result}</Typography>
+                </Grid>
               </Grid>
-              <Grid item>
-                <Typography variant="h3">
-                  {" "}
-                  {data.Media.title.english}
-                </Typography>
-              </Grid>
-              <Grid item>
-                <Typography variant="subtitle">{result}</Typography>
-              </Grid>
-            </Grid>
-          )}
+            )}
+          </Box>
         </Grid>
       </Grid>
     </Container>

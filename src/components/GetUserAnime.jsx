@@ -19,6 +19,8 @@ import {
   FormHelperText,
   Paper,
   Link,
+  Select,
+  MenuItem,
 } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
@@ -31,9 +33,11 @@ const useStyles = makeStyles((theme) => ({
     color: "white",
   },
   input: {
-    color: "black",
     textAlign: "center",
     fontSize: "20px",
+  },
+  labelcustom:{
+    color: "white",
   },
 }));
 
@@ -43,6 +47,8 @@ export default function GetUserAnime(props) {
   const [getAnime, { loading, data, error }] = useLazyQuery(GET_USER_ANIME_QUERY, {
     variables: { name: username },
   });
+
+  const [category, setCategory] = useState("All");
 
   const classes = useStyles();
   // console.log(data);
@@ -58,30 +64,45 @@ export default function GetUserAnime(props) {
         container
         direction="column"
         spacing={2}
+        alignItems="center"
       > 
-        <Grid item style={{backgroundColor:"white" , borderRadius:"15px"}}>
-            <FormControl fullWidth>
-              <TextField
-                label="Username"
-                defaultValue="Aritsulynn"
-                onKeyPress={() => getAnime()}
-                onChange={(e) => setUsername(e.target.value)}
-                inputProps={{ className: classes.input }}
-                className={ props.themes ? classes.darkTheme : classes.lightTheme }
-                variant="outlined"
-              />
-              {/* <Button onClick={() => getAnime()} style={{backgroundColor:"black", color: "white", borderRadius: "15px"}}>Butoon</Button> */}
-            </FormControl>
+        <Grid container>
+            <Box style={{width: "100%", padding: "10px 10px"}}>
+              <Grid container direction="column" spacing={2}>
+                <Grid item style={{width: "100%"}}>
+                  <TextField
+                        label="Username"
+                        defaultValue="Aritsulynn"
+                        onKeyPress={() => getAnime()}
+                        onChange={(e) => setUsername(e.target.value)}
+                        // inputProps={{ className: classes.input }}
+                        InputLabelProps={{ className: props.themes ? classes.lightTheme : classes.darkTheme }}
+                        style={{color: props.themes ? "white" : "black"}}
+                        fullWidth
+                      />
+                </Grid>
+                <Grid item style={{width: "100%"}}>
+                  <FormControl fullWidth>
+                    <InputLabel id="category-selector" style={{color: props.themes ? "white" : "black"}}>Category</InputLabel>
+                    <Select
+                      labelId="category-selector"
+                      id="category-selector"
+                      label="Category"
+                      value={category}
+                      onChange={(e) => setCategory(e.target.value)}
+                    >
+                    <MenuItem value="All" style={{color: "black"}}>All</MenuItem>
+                    {data && data.MediaListCollection.lists.map((list) => {
+                      return (
+                        <MenuItem value={list.name} style={{color: "black" }}>{list.name}</MenuItem>
+                        )})}
+                    </Select>
+                  </FormControl>
+                </Grid>
+              </Grid>
+            </Box>
         </Grid>
         <Grid item><Typography>*Working for anime only</Typography></Grid>
-      </Grid>
-      <Grid container justifyContent="center" spacing={1}>
-          {data && data.MediaListCollection.lists.map((list) => {
-            return (
-              <Grid item >
-                <Button variant="outlined" style={{backgroundColor: props.themes ? 'white' : 'black'}}><Link href={"#"+list.name} underline="none" style={{color : props.themes ? 'black' : 'white'}}>{list.name}</Link></Button>
-              </Grid >)
-          })}
       </Grid>
       <Grid
         container
@@ -92,22 +113,28 @@ export default function GetUserAnime(props) {
         <Grid item>
           {/* {loading && <Typography>Loading...</Typography>}
           {error && <Typography>error</Typography>} */}
-          {data && data.MediaListCollection.lists.map((list) => {
-            return (
-              <Grid container>
-                <Typography variant="h4" id={list.name}>{list.name}</Typography>
-                {(typeof(list.entries)=='object') ?
-                <Grid container justifyContent='center'>
-                  {list.entries.map((entry) =>{
-                    return(
-                          <Grid item style={{width:"150px", margin:"5px"}}>
-                            <img src={entry.media.coverImage.large} alt={entry.media.title.english} width="150px" height="200px"/>
-                            <Link href={entry.media.siteUrl} target="_blank" rel="noopener noreferrer" className={ props.themes ? classes.lightTheme : classes.darkTheme}><Typography variant="subtitle1" >{entry.media.title.romaji}</Typography></Link>
-                          </Grid>
-                    )})
-                  }
-                </Grid> 
-                : null}
+          {data && data.MediaListCollection.lists.filter((val) =>{
+            if(category == "All"){
+              return val
+            }else if(val.name.toLowerCase() === category.toLowerCase()){
+              return val
+            }
+            }).map((list) => {
+              return (
+                <Grid container>
+                  <Typography variant="h4" id={list.name}>{list.name}</Typography>
+                  {(typeof(list.entries)=='object') ?
+                  <Grid container justifyContent='center'>
+                    {list.entries.map((entry) =>{
+                      return(
+                            <Grid item style={{width:"150px", margin:"5px"}}>
+                              <img src={entry.media.coverImage.large} alt={entry.media.title.english} width="150px" height="200px"/>
+                              <Link href={entry.media.siteUrl} target="_blank" rel="noopener noreferrer" className={ props.themes ? classes.lightTheme : classes.darkTheme}><Typography variant="subtitle1" >{entry.media.title.romaji}</Typography></Link>
+                            </Grid>
+                      )})
+                    }
+                  </Grid> 
+                  : null}
             </Grid>
             )
           })  
