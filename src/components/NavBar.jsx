@@ -31,6 +31,13 @@ export default function NavBar(props) {
                   </Link>
                 </Grid>
                 <Grid item>
+                  <Link to="/Ani">
+                    <Typography style={{ color: "white" }}>
+                      Browse
+                    </Typography>
+                  </Link>
+                </Grid>
+                <Grid item>
                   <Link to="/AniSearch" style={{ color: "white" }}>
                     <Typography>
                       AniSearch

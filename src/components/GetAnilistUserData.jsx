@@ -39,6 +39,12 @@ const useStyles = makeStyles((theme) => ({
   labelcustom:{
     color: "white",
   },
+  customImg :{
+    transition: "transform .2s",
+    "&:hover":  { 
+      transform: "scale(1.2) "
+    }
+  },
 }));
 
 export default function GetAnilistUserData(props) {
@@ -143,8 +149,12 @@ export default function GetAnilistUserData(props) {
                     {list.entries.map((entry) =>{
                       return(
                             <Grid item style={{width:"150px", margin:"5px"}}>
-                              <img src={entry.media.coverImage.large} alt={entry.media.title.english} width="150px" height="200px"/>
-                              <Link href={entry.media.siteUrl} target="_blank" rel="noopener noreferrer" className={ props.themes ? classes.lightTheme : classes.darkTheme}><Typography variant="subtitle1" >{entry.media.title.romaji}</Typography></Link>
+                              <Link href={entry.media.siteUrl} target="_blank" rel="noopener noreferrer">
+                                <img src={entry.media.coverImage.large} alt={entry.media.title.english} width="150px" height="200px" className={classes.customImg} />
+                                <Typography variant="subtitle1" className={ props.themes ? classes.lightTheme : classes.darkTheme}>{entry.media.title.romaji}</Typography>
+                              </Link>
+                              {/* <img src={entry.media.coverImage.large} alt={entry.media.title.english} width="150px" height="200px"/>
+                              <Link href={entry.media.siteUrl} target="_blank" rel="noopener noreferrer" className={ props.themes ? classes.lightTheme : classes.darkTheme}><Typography variant="subtitle1" >{entry.media.title.romaji}</Typography></Link> */}
                             </Grid>
                       )})
                     }
