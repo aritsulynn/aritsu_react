@@ -42,7 +42,7 @@ export default function GetAnime(props) {
 
 
   function handlePageIncrease() {
-    if(pageNumber >= 1 && data.Page.pageInfo.hasNextPage == true){
+    if(pageNumber >= 1 && data.Page.pageInfo.hasNextPage === true){
       setPageNumber(pageNumber + 1);
     }
   }
