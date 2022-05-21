@@ -38,7 +38,6 @@ export const GET_ANILIST_USER_QUERY = gql`
     MediaListCollection(
       userName: $name
       type: $type
-      sort: MEDIA_TITLE_ROMAJI
     ) {
       lists {
         name
@@ -69,7 +68,7 @@ export const GET_ANILIST_SEARCH_QUERY = gql`
       pageInfo {
         hasNextPage
       }
-      media(search: $search) {
+      media(search: $search sort: POPULARITY_DESC) {
         type
         id
         title {
