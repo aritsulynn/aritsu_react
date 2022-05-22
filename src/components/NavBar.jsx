@@ -4,17 +4,13 @@ import {
   Box,
   Toolbar,
   Typography,
-  Button,
   Switch,
 } from "@mui/material";
 import { Link } from "react-router-dom";
 
 import { IoMoon, IoSunny } from "react-icons/io5";
-import { useState } from "react";
 
 export default function Navbar(props) {
-
-  const [click, setClick] = useState(false);
 
   return (
     <AppBar position="static">
