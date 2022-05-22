@@ -4,14 +4,14 @@ import { Routes, Route } from "react-router-dom";
 
 import React from "react";
 
-import Navbar from "./components/Navbar.jsx";
-import Home from "./pages/Home.jsx";
-import Footer from "./components/Footer.jsx";
+import Topping from "./components/Topping";
+import Home from "./pages/Home";
+import Footer from "./components/Footer";
 
 import { createTheme, ThemeProvider, responsiveFontSizes } from "@mui/material/styles";
 import { CssBaseline, Button } from "@mui/material";
 
-import { lightTheme, darkTheme } from "./theme/Theme.jsx";
+import { lightTheme, darkTheme } from "./theme/Theme";
 
 import useLocalStorage from "use-local-storage";
 

@@ -10,7 +10,7 @@ import { Link } from "react-router-dom";
 
 import { IoMoon, IoSunny } from "react-icons/io5";
 
-export default function Navbar(props) {
+export default function Topping(props) {
 
   return (
     <AppBar position="static">
