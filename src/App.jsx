@@ -4,9 +4,9 @@ import { Routes, Route } from "react-router-dom";
 
 import React from "react";
 
-import Navbar from "./components/Navbar";
-import Home from "./pages/Home";
-import Footer from "./components/Footer";
+import Navbar from "../src/components/Navbar";
+import Home from "../src/pages/Home";
+import Footer from "../src/components/Footer";
 
 import { createTheme, ThemeProvider, responsiveFontSizes } from "@mui/material/styles";
 import { CssBaseline, Button } from "@mui/material";
