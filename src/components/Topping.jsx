@@ -5,28 +5,29 @@ import {
   Toolbar,
   Typography,
   Switch,
+  Button,
 } from "@mui/material";
 import { Link } from "react-router-dom";
 
-import { IoMoon, IoSunny } from "react-icons/io5";
-
+import { BsLightbulbFill, BsLightbulb } from "react-icons/bs";
 export default function Topping(props) {
-
   return (
     <AppBar position="static">
       <Container>
         <Toolbar>
-          <Link to="/" style={{textDecoration:"none", color: "white"}} ><Typography variant="h6">Aritsu</Typography></Link>
+          <Link to="/" style={{ textDecoration: "none", color: "white" }}>
+            <Typography variant="h6">Aritsu</Typography>
+          </Link>
           <Box flexGrow={1} />
-          <Link to="/"style={{textDecoration:"none", color: "white"}} >Home</Link>
-          <Switch
-            icon={<IoSunny />}
-            checkedIcon={<IoMoon />}
-            checked={props.themeNow}
-            onChange={props.toggleTheme}
-            color="default"
-            style={{ fontSize: "20px" }}
-          />
+          <Link to="/" style={{ textDecoration: "none", color: "white" }}>
+            Home
+          </Link>
+          <a
+            style={{ marginLeft: "10px", fontSize: "16px" }}
+            onClick={props.toggleTheme}
+          >
+            {props.themeNow ? <BsLightbulb /> : <BsLightbulbFill />}
+          </a>
         </Toolbar>
       </Container>
     </AppBar>
