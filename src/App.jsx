@@ -27,7 +27,7 @@ function App() {
       theme={theme ? createTheme( responsiveFontSizes(darkTheme)) : createTheme(responsiveFontSizes(lightTheme))}
     >
       <CssBaseline />
-      <Navbar toggleTheme={toggleTheme} themeNow={theme} />
+      <Topping toggleTheme={toggleTheme} themeNow={theme} />
       <Routes>
         <Route path="*" element={<Home toggleTheme={toggleTheme} />} />
         <Route path="/" element={<Home toggleTheme={toggleTheme} />} />
