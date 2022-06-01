@@ -25,7 +25,7 @@ export default function Topping(props) {
             </Link>
           </Button>
           <Button>
-            <Link to="/Aboutme" style={{ textDecoration: "none", color: "white" }}>
+            <Link to="/aboutme" style={{ textDecoration: "none", color: "white" }}>
               About me
             </Link>
           </Button>

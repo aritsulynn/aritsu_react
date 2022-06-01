@@ -32,7 +32,7 @@ function App() {
       <Routes>
         <Route path="*" element={<Home toggleTheme={toggleTheme} />} />
         <Route path="/" element={<Home toggleTheme={toggleTheme} />} />
-        <Route path="/Aboutme" element={<Aboutme toggleTheme={toggleTheme} />} />
+        <Route path="/aboutme" element={<Aboutme toggleTheme={toggleTheme} />} />
       </Routes>
       <Footer themeNow={theme}/>
     </ThemeProvider>
