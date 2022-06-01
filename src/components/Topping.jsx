@@ -19,15 +19,11 @@ export default function Topping(props) {
             <Typography variant="h6">Aritsu</Typography>
           </Link>
           <Box flexGrow={1} />
-          <Button>
-            <Link to="/" style={{ textDecoration: "none", color: "white" }}>
-              Home
-            </Link>
+          <Button component={Link} to="/" style={{ color: "white" }}>
+            Home
           </Button>
-          <Button>
-            <Link to="/aboutme" style={{ textDecoration: "none", color: "white" }}>
-              About me
-            </Link>
+          <Button component={Link} to="/aboutme" style={{ color: "white" }}>
+            About me
           </Button>
           <Button
             style={{ fontSize: "16px" , color: "white" }}
