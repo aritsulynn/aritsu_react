@@ -7,6 +7,7 @@ import React from "react";
 import Topping from "./components/Topping";
 import Home from "./pages/Home";
 import Footer from "./components/Footer";
+import Aboutme from "./pages/Aboutme";
 
 import { createTheme, ThemeProvider, responsiveFontSizes } from "@mui/material/styles";
 import { CssBaseline, Button } from "@mui/material";
@@ -31,6 +32,7 @@ function App() {
       <Routes>
         <Route path="*" element={<Home toggleTheme={toggleTheme} />} />
         <Route path="/" element={<Home toggleTheme={toggleTheme} />} />
+        <Route path="/Aboutme" element={<Aboutme toggleTheme={toggleTheme} />} />
       </Routes>
       <Footer themeNow={theme}/>
     </ThemeProvider>
