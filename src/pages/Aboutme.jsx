@@ -22,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
 export default function Home(props) {
   const classes = useStyles();
   let text = 
-  `I'm Lynn ー a student at the some University who interested in coding, anime and games. I'm playing League of Legends and Valorant.
+  `I'm Lynn ー a dull, gloomy guy and also a student at the some University who interested in coding, anime and games. I'm playing League of Legends and Valorant.
   Feel free to contact me if you have any questions or anything else.
   `;
   return (
