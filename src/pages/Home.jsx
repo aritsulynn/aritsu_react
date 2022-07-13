@@ -29,18 +29,18 @@ export default function Home(props) {
         <Grid item>
           <img
             src={aritsu_cover}
-            alt="Aritsu Cover"
+            alt="aritsu Cover"
             className={classes.custom}
           />
         </Grid>
         <Grid item>
-          <Typography style={{ fontSize: "30px", fontWeight: "bold" }}>
-            Aritsu Lynn's
-          </Typography>
+          {/* <Typography style={{ fontSize: "30px", fontWeight: "bold" }}>
+            Lynn's 
+          </Typography> */}
         </Grid>
         <Grid item>
           <Typography style={{ fontWeight: "lighter" }}>
-            Hello! I'm Lynn, who love anime and games. feel free to contact me{" "}
+            " Compared to the noisy cicada, the silent firefly suffers more inside. " ー Senryuu Shoujo
           </Typography>
         </Grid>
       </Grid>
