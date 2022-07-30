@@ -18,15 +18,18 @@ import { lightTheme, darkTheme } from "./theme/Theme";
 import useLocalStorage from "use-local-storage";
 
 function App() {
-  const [theme, setTheme] = useLocalStorage("isDarkTheme", true);
+  // const [theme, setTheme] = useLocalStorage("isDarkTheme", true);
 
-  const toggleTheme = () => {
-    setTheme(theme == true ? false : true);
-  };
+  // const toggleTheme = () => {
+  //   setTheme(theme == true ? false : true);
+  // };
 
   return (
+    // <ThemeProvider
+    //   theme={theme ? createTheme( responsiveFontSizes(lightTheme)) : createTheme(responsiveFontSizes(lightTheme))}
+    // >
     <ThemeProvider
-      theme={theme ? createTheme( responsiveFontSizes(lightTheme)) : createTheme(responsiveFontSizes(lightTheme))}
+      theme={createTheme( responsiveFontSizes(lightTheme))}
     >
       <CssBaseline />
       {/* <Topping toggleTheme={toggleTheme} themeNow={theme} /> */}
