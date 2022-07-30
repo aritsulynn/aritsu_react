@@ -41,9 +41,9 @@ export default function sairahus2022(props) {
         </Grid>
         <Grid item>
           <Typography style={{ fontSize: "25px", fontWeight: "lighter", marginTop: "10px"}}>
-            {counts >= 0 && counts < 1 ? "พร้อมแล้วกดเริ่มได้เลยย" : ''}
-            {counts >= 25 && counts < 35 ? "น้องสู้ปุ่มกด แต่ปุ่มกดสู้กลับ xD" : ''}
-            {counts >= 50 && counts <= 51 ? "จะต้องกดอีกกี่ปีน้ออออออ" : ''}
+            {counts == 0 ? "พร้อมแล้วกดเริ่มได้เลยย" : ''}
+            {counts >= 25 && counts <= 35 ? "น้องสู้ปุ่มกด แต่ปุ่มกดสู้กลับ xD" : ''}
+            {counts >= 50 && counts <= 59 ? "จะต้องกดอีกกี่ปีน้ออออออ" : ''}
             {counts >= 60 && counts <= 74 ? "คือพี่จะบอกว่า..." : ''}
             {counts >= 75 && counts <= 90 ? "สู้ๆค้าบบบ" : ''}
             {counts >= 100 && counts <= 101 ? "ปลดล็อคความสำเร็จ 'กดไปแล้วทั้งหมด 100 ครั้ง' !" : ''}
