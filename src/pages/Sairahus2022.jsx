@@ -17,12 +17,12 @@ export default function sairahus2022(props) {
     <Container>
       <Grid container direction="column" align="center">
         <Grid item>
-          <Typography style={{ fontSize: "85px", fontWeight: "bold" }}>
+          <Typography style={{ fontSize: "75px", fontWeight: "bold" }}>
             Sairahus "2022"
           </Typography>
         </Grid>
         <Grid item>
-          <Typography style={{ fontWeight: "lighter", fontSize: "40px" }}>
+          <Typography style={{ fontWeight: "lighter", fontSize: "20px" }}>
             กดให้ครบ xx ครั้งเพื่อให้ได้รับคำใบ้
           </Typography>
         </Grid>
