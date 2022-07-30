@@ -21,21 +21,21 @@ function App() {
   const [theme, setTheme] = useLocalStorage("isDarkTheme", true);
 
   const toggleTheme = () => {
-    setTheme(theme == true ? false : false);
+    setTheme(theme == true ? false : true);
   };
 
   return (
     <ThemeProvider
-      theme={theme ? createTheme( responsiveFontSizes(darkTheme)) : createTheme(responsiveFontSizes(lightTheme))}
+      theme={theme ? createTheme( responsiveFontSizes(lightTheme)) : createTheme(responsiveFontSizes(lightTheme))}
     >
       <CssBaseline />
       {/* <Topping toggleTheme={toggleTheme} themeNow={theme} /> */}
       <Routes>
-        <Route path="*" element={<Sairahus2022 themeNow={theme}/>} />
+        <Route path="*" element={<Sairahus2022 />} />
         {/* <Route path="*" element={<Home toggleTheme={toggleTheme} />} />
         <Route path="/" element={<Home toggleTheme={toggleTheme} />} />
         <Route path="/aboutme" element={<Aboutme toggleTheme={toggleTheme} />} /> */}
-        <Route path="/sairahus2022" element={<Sairahus2022 themeNow={theme} />} />
+        <Route path="/sairahus2022" element={<Sairahus2022 />} />
       </Routes>
       {/* <Footer themeNow={theme}/> */}
     </ThemeProvider>

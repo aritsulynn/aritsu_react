@@ -41,7 +41,7 @@ export default function sairahus2022(props) {
         </Grid>
         <Grid item>
           <Typography style={{ fontSize: "25px", fontWeight: "lighter", marginTop: "10px"}}>
-            {counts >= 0 && counts < 1 ? "กดเริ่มได้เลยย" : ''}
+            {counts >= 0 && counts < 1 ? "พร้อมแล้วกดเริ่มได้เลยย" : ''}
             {counts >= 25 && counts < 35 ? "น้องสู้ปุ่มกด แต่ปุ่มกดสู้กลับ xD" : ''}
             {counts >= 50 && counts <= 51 ? "จะต้องกดอีกกี่ปีน้ออออออ" : ''}
             {counts >= 75 && counts <= 80 ? "สู้ๆค้าบบบ" : ''}
@@ -51,7 +51,7 @@ export default function sairahus2022(props) {
             {counts >= 161 && counts <= 170 ? "คำใบ้คืออ" : ""}
             {counts >= 171 && counts <= 177 ? "คำใบ้คือออ" : ""}
             {counts >=178 ? "คำใบ้คือ พี่ใส่เสื้อสีดำและง่วงนอน"  : ""}<br/>
-            {counts >=178 ? "(คำใบ้ที่ 2 : และกดไปแล้วกี่ครั้งน้าา?? แล้วมันหมายความว่ายังไง? มันคืออะไรอ่าา! จะต้องถามพี่คนไหน?)"  : ""}
+            {counts >=178 ? "(คำใบ้ที่ 2 : กดไปแล้วกี่ครั้งน้าา?? แล้วมันหมายความว่ายังไง? มันคืออะไรอ่าา! จะต้องถามพี่คนไหน?)"  : ""}
           </Typography>
         </Grid>  
       </Grid>
