@@ -14,9 +14,9 @@ export default function Topping(props) {
   return (
     <AppBar position="static">
       <Container>
-        <Toolbar style={{height:"120px"}}>
+        <Toolbar style={{height:"23px"}}>
           <Link to="/" style={{ textDecoration: "none", color: "white" }}>
-            <Typography variant="h3">aritsu</Typography>
+            <Typography variant="h3">ARITSU</Typography>
           </Link>
           <Box flexGrow={1} />
           <Button component={Link} to="/" style={{ color: "white" }}>
@@ -25,12 +25,6 @@ export default function Topping(props) {
           <Button component={Link} to="/aboutme" style={{ color: "white" }}>
             About me
           </Button>
-          {/* <Button component={Link} to="/aboutme" style={{ color: "white" }}>
-            Blog
-          </Button> */}
-          {/* <Button component={Link} to="/aboutme" style={{ color: "white" }}>
-            About me
-          </Button> */}
           <Button
             style={{ fontSize: "16px" , color: "white" }}
             onClick={props.toggleTheme}
