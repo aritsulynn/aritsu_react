@@ -25,6 +25,9 @@ export default function Topping(props) {
           <Button component={Link} to="/aboutme" style={{ color: "white" }}>
             About me
           </Button>
+          <Button style={{ color: "white" }}>
+            <a href="https://anithai.netlify.app/" sx={{ color: "white", textDecoration:"none" }}>AniThai</a>
+          </Button>
           <Button
             style={{ fontSize: "16px" , color: "white" }}
             onClick={props.toggleTheme}
