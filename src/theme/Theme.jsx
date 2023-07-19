@@ -8,10 +8,13 @@ export const darkTheme = createTheme({
     background: {
       default: "#1f1f1f",
     },
-    mode : "dark",
+    mode: "dark",
   },
+  // typography: {
+  //   fontFamily: "Comic Neue",
+  // },
   typography: {
-    fontFamily: "Comic Neue",
+    fontFamily: "Noto Sans Thai",
   },
 });
 
@@ -23,9 +26,12 @@ export const lightTheme = createTheme({
     background: {
       default: "#fff",
     },
-    mode : "light",
+    mode: "light",
   },
+  // typography: {
+  //   fontFamily: "Comic Neue",
+  // },
   typography: {
-    fontFamily: "Comic Neue",
+    fontFamily: "Noto Sans Thai",
   },
 });

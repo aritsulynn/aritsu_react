@@ -14,6 +14,14 @@ import {
 import { Link } from "react-router-dom";
 
 import { BsSunFill, BsSun, AiOutlineMenu } from "react-icons/all";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faHouse,
+  faStream,
+  faCircleInfo,
+  faArrowUpRightFromSquare,
+  faSun,
+} from "@fortawesome/free-solid-svg-icons";
 
 export default function Topping(props) {
   const [anchorEl, setAnchorEl] = useState(null);
@@ -31,7 +39,9 @@ export default function Topping(props) {
       <Container>
         <Toolbar style={{ height: "23px" }}>
           <Link to="/" style={{ textDecoration: "none", color: "white" }}>
-            <Typography variant="h3">ARITSU</Typography>
+            <Typography variant="h6" sx={{ fontWeight: "normal" }}>
+              ARITSU
+            </Typography>
           </Link>
           <Box flexGrow={1} />
           <Box sx={{ display: { xs: "block", md: "none" } }}>
@@ -81,13 +91,30 @@ export default function Topping(props) {
             </Menu>
           </Box>
           <Box sx={{ display: { xs: "none", md: "flex" } }}>
-            <Button component={Link} to="/" style={{ color: "white" }}>
+            <Button
+              component={Link}
+              to="/"
+              style={{ color: "white", fontWeight: "normal" }}
+            >
+              <FontAwesomeIcon icon={faHouse} style={{ marginRight: "10px" }} />
               Home
             </Button>
-            <Button component={Link} to="/aboutme" style={{ color: "white" }}>
+            <Button
+              component={Link}
+              to="/aboutme"
+              style={{ color: "white", fontWeight: "normal" }}
+            >
+              <FontAwesomeIcon
+                icon={faStream}
+                style={{ marginRight: "10px" }}
+              />
               About me
             </Button>
-            <Button style={{ color: "white" }}>
+            <Button style={{ color: "white", fontWeight: "normal" }}>
+              <FontAwesomeIcon
+                icon={faArrowUpRightFromSquare}
+                style={{ marginRight: "10px" }}
+              />
               <a
                 href="https://anithai.netlify.app/"
                 style={{ color: "inherit", textDecoration: "none" }}
@@ -96,7 +123,7 @@ export default function Topping(props) {
               </a>
             </Button>
             <Button
-              style={{ fontSize: "16px", color: "white" }}
+              style={{ fontSize: "16px", color: "white", fontWeight: "normal" }}
               onClick={props.toggleTheme}
             >
               {props.themeNow ? <BsSun /> : <BsSunFill />}
