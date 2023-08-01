@@ -1,98 +1,55 @@
 import React, { useState } from "react";
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCoffee } from "@fortawesome/free-solid-svg-icons";
 import {
-  BsDiscord,
-  BsFacebook,
-  BsInstagram,
-  BsTwitter,
-  BsGithub,
-} from "react-icons/bs";
-
-import { Typography, Container, Grid } from "@mui/material";
-
-// import { makeStyles } from '@mui/styles'
-
-// const useStyles = makeStyles(({
-//     darkTheme :{
-//         color: '#222222',
-//         marginTop: '10px',
-//         marginLeft: '15px',
-//         fontSize: '30px',
-//         marginBottom: '10px',
-//         "&:hover, &:focus": {
-//             color: "Orange",
-//         },
-//     },
-//     lightTheme :{
-//         color: 'white',
-//         marginTop: '10px',
-//         marginLeft: '15px',
-//         fontSize: '30px',
-//         marginBottom: '10px',
-//         "&:hover, &:focus": {
-//             color: "Orange",
-//         },
-//     },
-// }));
-
+  faTwitter,
+  faFacebook,
+  faInstagram,
+  faDiscord,
+  faGithub,
+  faTwitch,
+  faYoutube,
+} from "@fortawesome/free-brands-svg-icons";
 export default function Footer(props) {
-  // const classes = useStyles();
+  const feet = [
+    {
+      name: "Github",
+      icon: faGithub,
+      url: "https://github.com/Aritsulynn",
+    },
+    {
+      name: "Discord",
+      icon: faDiscord,
+      url: "https://discordapp.com/users/291900215785685014",
+    },
+    {
+      name: "Instagram",
+      icon: faInstagram,
+      url: "https://www.instagram.com/imdouzo/",
+    },
+    {
+      name: "Twitter",
+      icon: faTwitch,
+      url: "https://www.twitch.tv/imdouzo",
+    },
+    {
+      name: "Youtube",
+      icon: faYoutube,
+      url: "https://www.youtube.com/@imdouzo",
+    },
+  ];
 
   return (
-    <Container style={{ marginTop: "15px" }}>
-      <Grid
-        container
-        className="text-3xl flex space-x-2"
-        justifyContent="center"
-      >
-        {/* <Grid item>
-          <a
-            href="https://www.facebook.com/aritsulynn"
-            // className={props.themeNow ? classes.lightTheme : classes.darkTheme}
-            className="hover:text-yellow-400"
-          >
-            <BsFacebook />
+    <div className="container mx-auto mt-6 justify-center flex space-x-4 text-3xl pb-6">
+      {feet.map((foot) => (
+        <div className="hover:text-amber-400 text-center">
+          <a href={foot.url}>
+            <FontAwesomeIcon icon={foot.icon} />
+            {/* <p className="md:hidden text-base">{foot.name}</p> */}
           </a>
-        </Grid> */}
-        <Grid item>
-          <a
-            href="https://www.instagram.com/douzolynn/"
-            // className={props.themeNow ? classes.lightTheme : classes.darkTheme}
-            className="hover:text-yellow-400"
-          >
-            <BsInstagram />
-          </a>
-        </Grid>
-        {/* <Grid item>
-          <a
-            href="https://twitter.com/aritsulynnjp"
-            // className={props.themeNow ? classes.lightTheme : classes.darkTheme}
-            className="hover:text-yellow-400"
-          >
-            <BsTwitter />
-          </a>
-        </Grid> */}
-        <Grid item>
-          <a
-            href="https://github.com/Aritsulynn"
-            // className={props.themeNow ? classes.lightTheme : classes.darkTheme}
-            className="hover:text-yellow-400"
-          >
-            <BsGithub />
-          </a>
-        </Grid>
-        <Grid item>
-          <a
-            href="https://discordapp.com/users/291900215785685014"
-            // className={props.themeNow ? classes.lightTheme : classes.darkTheme}
-            className="hover:text-yellow-400"
-          >
-            <BsDiscord />
-          </a>
-        </Grid>
-      </Grid>
-      {/* <div><h1>dasd</h1></div> */}
-    </Container>
+        </div>
+      ))}
+    </div>
   );
 }
-//

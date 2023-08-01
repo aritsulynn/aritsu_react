@@ -4,23 +4,8 @@ import { Routes, Route } from "react-router-dom";
 
 import React from "react";
 
-import Topping from "./components/Topping";
-import Home from "./pages/Home";
-import Footer from "./components/Footer";
-import Aboutme from "./pages/Aboutme";
-
-import {
-  createTheme,
-  ThemeProvider,
-  responsiveFontSizes,
-} from "@mui/material/styles";
-import { CssBaseline, Button } from "@mui/material";
-
-import { lightTheme, darkTheme } from "./theme/Theme";
-
 import useLocalStorage from "use-local-storage";
-
-import { BrowserRouter } from "react-router-dom";
+import CoverImg from "./img/aritsu_cover.png";
 
 function App() {
   const [theme, setTheme] = useLocalStorage("isDarkTheme", true);
@@ -30,27 +15,19 @@ function App() {
   };
 
   return (
-    <BrowserRouter>
-      <ThemeProvider
-        theme={
-          theme
-            ? createTheme(responsiveFontSizes(darkTheme))
-            : createTheme(responsiveFontSizes(lightTheme))
-        }
-      >
-        <CssBaseline />
-        <Topping toggleTheme={toggleTheme} themeNow={theme} />
-        <Routes>
-          <Route path="*" element={<Home toggleTheme={toggleTheme} />} />
-          <Route path="/" element={<Home toggleTheme={toggleTheme} />} />
-          <Route
-            path="/aboutme"
-            element={<Aboutme toggleTheme={toggleTheme} />}
-          />
-        </Routes>
-        <Footer themeNow={theme} />
-      </ThemeProvider>
-    </BrowserRouter>
+    <div className="mt-3">
+      <div direction="column" align="center">
+        <div className="object-contain">
+          <img src={CoverImg} alt="coverImg" className="max-h-96" />
+        </div>
+        <div className="mt-3 mx-3">
+          <p className="font-normal text-lg ">
+            "Compared to the noisy cicada, the silent firefly suffers more
+            inside." ー Senryuu Shoujo
+          </p>
+        </div>
+      </div>
+    </div>
   );
 }
 
