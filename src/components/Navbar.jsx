@@ -1,10 +1,12 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import { BsSunFill, BsSun, AiOutlineMenu } from "react-icons/all";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function Navbar(props) {
+  const navigate = useNavigate();
+
   let navs = [
     {
       name: "Home",
@@ -32,7 +34,7 @@ export default function Navbar(props) {
         <ul className="flex space-x-5 mr-3">
           {navs.map((items, i) => (
             <li key={i}>
-              <a href={items.link}>{items.name}</a>
+              <button onClick={() => navigate(items.link)}>{items.name}</button>
             </li>
           ))}
         </ul>
