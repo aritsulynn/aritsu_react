@@ -26,9 +26,9 @@ export default function Navbar(props) {
     <div className="shadow-2xl  py-4">
       <div className="container mx-auto flex text-lg font-bold">
         <div className="ml-3">
-          <a className="flex-none" href="/">
+          <button className="flex-none" onClick={() => navigate("/")}>
             ARITSU
-          </a>
+          </button>
         </div>
         <div className="grow"></div>
         <ul className="flex space-x-5 mr-3">
