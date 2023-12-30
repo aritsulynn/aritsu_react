@@ -10,7 +10,8 @@ import Footer from "./components/Footer";
 import Aboutme from "./pages/Aboutme";
 import App from "./App";
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <BrowserRouter basename="/aritsu_react">
+  // <BrowserRouter basename="/aritsu_react">
+  <BrowserRouter>
     <Navbar />
     <Routes>
       <Route path="*" element={<App />} />
