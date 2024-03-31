@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
-import { BsSunFill, BsSun, AiOutlineMenu } from "react-icons/all";
+// import { BsSunFill, BsSun, AiOutlineMenu } from "react-icons/all";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function Navbar(props) {
